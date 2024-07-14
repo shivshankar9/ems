@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import './LandingPage.css'; // Reusing the landing page styles
 
 const LoginPage = () => {
     const [email, setEmail] = useState('');
@@ -18,23 +19,32 @@ const LoginPage = () => {
     };
 
     return (
-        <div>
-            <h2>Login</h2>
-            <form onSubmit={handleLogin}>
+        <div className="landing-page">
+            <div className="landing-header">
+                <h2>Welcome Back!</h2>
+                <p>Login to your Employee Management System account</p>
+            </div>
+            <form className="landing-form" onSubmit={handleLogin}>
                 <input
                     type="email"
                     placeholder="Email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                    required
                 />
                 <input
                     type="password"
                     placeholder="Password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
+                    required
                 />
-                <button type="submit">Login</button>
+                <button className="btn" type="submit">Login</button>
             </form>
+            <div className="alternative-option">
+                <p>Don't have an account? <span className="link" onClick={() => navigate('/register')}>Register</span></p>
+            </div>
+
         </div>
     );
 };
