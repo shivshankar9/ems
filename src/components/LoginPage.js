@@ -11,8 +11,14 @@ const LoginPage = () => {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('/login', { email, password });
-            navigate('/');
+            if (email === 'admin@ems.com' && password === 'admin') {
+                // If username and password are both 'admin', redirect to the Employees component
+                navigate('/employees');
+            } else {
+                // Otherwise, make a login request to the backend
+                await axios.post('/login', { email, password });
+                navigate('/');
+            }
         } catch (error) {
             console.error('Login failed:', error);
         }
@@ -44,7 +50,6 @@ const LoginPage = () => {
             <div className="alternative-option">
                 <p>Don't have an account? <span className="link" onClick={() => navigate('/register')}>Register</span></p>
             </div>
-
         </div>
     );
 };

@@ -17,6 +17,7 @@ const LandingPage = () => {
                 <button onClick={signInWithGoogle} className="google-btn">Sign in with Google</button>
                 <button className="btn" onClick={() => navigate('/login')}>Login</button>
                 <button className="btn" onClick={() => navigate('/register')}>Register</button>
+
             </div>
             <div className="animation">
                 <div className="circle"></div>
