@@ -1,7 +1,15 @@
 /* src/components/EmployeeDetails.css */
-.employee-dashboard {
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
+}
+
+.employee-dashboard {
     background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
 }
 
 .dashboard-header {
@@ -9,54 +17,79 @@
     margin-bottom: 20px;
 }
 
-.dashboard-header h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-}
-
-.dashboard-header p {
-    font-size: 1.2em;
-    color: #666;
-}
-
 .dashboard-content {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
 }
 
 .profile-card,
-.options-card {
+.timeline-card,
+.options-card,
+.charts-container,
+.documents-container {
     background: white;
-    padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 45%;
-    margin: 10px;
-    text-align: center;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .profile-card h2,
-.options-card h2 {
-    font-size: 1.8em;
-    margin-bottom: 20px;
-}
-
-.profile-card p {
-    font-size: 1.2em;
-    margin: 5px 0;
+.timeline-card h2,
+.options-card h2,
+.charts-container h2,
+.documents-container h2 {
+    margin-bottom: 10px;
 }
 
 .btn {
+    margin-top: 10px;
     background-color: #007bff;
     color: white;
-    padding: 10px 20px;
-    margin: 10px 0;
+    padding: 10px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .btn:hover {
     background-color: #0056b3;
+}
+
+.charts {
+    display: flex;
+    justify-content: space-between;
+}
+
+.chart {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.chart-placeholder {
+    background-color: #e0e0e0;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.documents-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.documents-list li {
+    margin: 5px 0;
+}
+
+.documents-list a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.documents-list a:hover {
+    text-decoration: underline;
 }
