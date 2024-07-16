@@ -1,0 +1,62 @@
+/* src/components/EmployeeDetails.css */
+.employee-dashboard {
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.dashboard-header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.dashboard-header p {
+    font-size: 1.2em;
+    color: #666;
+}
+
+.dashboard-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.profile-card,
+.options-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 45%;
+    margin: 10px;
+    text-align: center;
+}
+
+.profile-card h2,
+.options-card h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.profile-card p {
+    font-size: 1.2em;
+    margin: 5px 0;
+}
+
+.btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
